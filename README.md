@@ -47,3 +47,34 @@ $ git rebase origin/develop
 
 ```
 
+<br><br><br>
+
+## 2. Permission to RickZhou666/github-demo.git denied to RickZhou666.
+
+```bash 
+# log
+remote: Permission to RickZhou666/github-demo.git denied to RickZhou666.
+fatal: unable to access 'https://github.com/RickZhou666/github-demo.git/': The requested URL returned error: 403
+
+
+# fix update to my gihub PAT 
+$ git config credential.helper
+>> /.codespaces/bin/gitcredential_github.sh
+
+$ cat /.codespaces/bin/gitcredential_github.sh
+
+$ sudo su
+$ vi /.codespaces/bin/gitcredential_github.sh
+>> 
+
+# setup environment variable
+# https://stackoverflow.com/a/234756
+$ export GITHUB_TOKEN=<MY_GITHUB_TOKEN>
+$ echo $GITHUB_TOKEN
+
+# apply changes
+$ source /.codespaces/bin/gitcredential_github.sh
+
+
+```
+
